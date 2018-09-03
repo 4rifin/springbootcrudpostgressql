@@ -52,4 +52,11 @@ public class CustomerService {
 		return false;
 	}
 	
+	public Boolean existsByName(String firstName){
+		return customerDao.existsByName(firstName);
+	}
+	
+	public Customer findByFirstName(String firstName){
+		return customerDao.findByFirstName(firstName);
+	}
 }
