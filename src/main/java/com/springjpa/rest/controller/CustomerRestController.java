@@ -21,6 +21,7 @@ import com.springjpa.rest.service.CustomerRestService;
 
 @Controller
 @RestController
+@RequestMapping(value = "/ws")
 public class CustomerRestController {
 
 	static Logger log = Logger.getLogger(CustomerRestController.class.getName());
