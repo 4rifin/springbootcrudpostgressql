@@ -2,10 +2,16 @@ package com.springjpa.rest.model;
 
 import org.springframework.http.HttpStatus;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class MessageInfo {
+	@ApiModelProperty(notes="Message Info Code")
 	private String code;
+	@ApiModelProperty(notes="Message Info Status")
 	private HttpStatus status;
+	@ApiModelProperty(notes="Message Info Message Text")
 	private String message;
+	@ApiModelProperty(notes="Message Info Result Responese Api")
 	private Object result;
 	
 	

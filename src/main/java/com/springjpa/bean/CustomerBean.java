@@ -1,8 +1,12 @@
 package com.springjpa.bean;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class CustomerBean {
 	private long id;
+	@ApiModelProperty(notes="First Name Customer")
 	private String firstName;
+	@ApiModelProperty(notes="Last Name Customer")
 	private String lastName;
 	
 	public long getId() {

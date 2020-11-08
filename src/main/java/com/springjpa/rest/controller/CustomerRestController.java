@@ -19,9 +19,13 @@ import com.springjpa.bean.CustomerBean;
 import com.springjpa.rest.model.MessageInfo;
 import com.springjpa.rest.service.CustomerRestService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @Controller
 @RestController
 @RequestMapping(value = "/ws")
+@Api(value="Customer Rest", description = "Api Retrieve Data Costumer")
 public class CustomerRestController {
 
 	static Logger log = Logger.getLogger(CustomerRestController.class.getName());
@@ -32,6 +36,7 @@ public class CustomerRestController {
 	// --------------------------------------------------------
 	// ----------------Retrieve All Customers------------------
 	// --------------------------------------------------------
+	@ApiOperation(value = "Get All Data Customer")
 	@RequestMapping(value = "/customerGetAll", method = RequestMethod.GET)
 	public ResponseEntity<MessageInfo> listCustomerGetAll(@Valid MessageInfo messageInfo) {
 
@@ -46,6 +51,7 @@ public class CustomerRestController {
 	// --------------------------------------------------------
 	// ----------------Retrieve Single Customers---------------
 	// --------------------------------------------------------
+	@ApiOperation(value = "Get Data Customer By id")
 	@RequestMapping(value = "/customerGetId/{id}", method = RequestMethod.GET)
 	public ResponseEntity<String> listCustomers(@PathVariable("id") long id) {
 
@@ -60,6 +66,7 @@ public class CustomerRestController {
 	// --------------------------------------------------------
 	// ----------------Create a Customer-----------------------
 	// --------------------------------------------------------
+	@ApiOperation(value = "add Data Customer")
 	@RequestMapping(value = "/customer/add", method = RequestMethod.POST)
 	public ResponseEntity<MessageInfo> createCustomer(@RequestBody CustomerBean customerBean,
 			@Valid MessageInfo messageInfo) {
@@ -75,6 +82,7 @@ public class CustomerRestController {
 	// --------------------------------------------------------
 	// ----------------Update a Customer-----------------------
 	// --------------------------------------------------------
+	@ApiOperation(value = "Edit Data Customer")
 	@RequestMapping(value = "/customer/edit", method = RequestMethod.PUT)
 	public ResponseEntity<MessageInfo> updateCustomer(@RequestBody CustomerBean customerBean,
 			@Valid MessageInfo messageInfo) {
@@ -90,6 +98,7 @@ public class CustomerRestController {
 	// --------------------------------------------------------
 	// ----------------Delete a Customer-----------------------
 	// --------------------------------------------------------
+	@ApiOperation(value = "Delete Data Customer")
 	@RequestMapping(value = "/customer/delete/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<MessageInfo> deleteCustomer(@PathVariable("id") long id, @Valid MessageInfo messageInfo) {
 
@@ -104,6 +113,7 @@ public class CustomerRestController {
 	/*
 	 * ========================================================================
 	 */
+	@ApiOperation(value = "Get All Data Customer list")
 	@RequestMapping(value = "/listCustomer", method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<MessageInfo> listCustomer(@Valid MessageInfo messageInfo) {
@@ -116,6 +126,7 @@ public class CustomerRestController {
 		}
 	}
 
+	@ApiOperation(value = "Get Data Customer By id List ")
 	@RequestMapping(value = "/listCustomer/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public ResponseEntity<String> listCustomerById(@PathVariable("id") long id) {
