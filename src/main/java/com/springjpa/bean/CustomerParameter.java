@@ -5,7 +5,7 @@ public class CustomerParameter {
 	private String firstName;
 	private String lastName;
 	
-	public long getId() {
+	public long getId() { 
 		return id;
 	}
 	public void setId(long id) {
